@@ -201,6 +201,6 @@ class ExtraSDEServiceProvider extends AbstractSeatPlugin
      */
     public function getVersion(): string
     {
-        return config('extra-sde.config.version');
+        return config('extrasde.config.version');
     }
 }
