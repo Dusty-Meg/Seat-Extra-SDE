@@ -126,7 +126,15 @@ class ExtraSDEServiceProvider extends AbstractSeatPlugin
     private function add_sde_tables()
     {
         $this->registerSdeTables([
-            'mapJumps',
+            'dgmAttributeCategories',
+            'dgmAttributeTypes',
+            'dgmEffects',
+            'dgmExpressions',
+            'industryActivity',
+            'industryActivityMaterials',
+            'industryActivityProducts',
+            'industryActivitySkills',
+            'industryBlueprints',
         ]);
     }
 
