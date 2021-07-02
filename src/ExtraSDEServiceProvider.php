@@ -19,7 +19,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-namespace Author\Seat\YourPackage;
+namespace Dusty_Meg\\Seat\\SeatExtraSDE;
 
 use Seat\Services\AbstractSeatPlugin;
 
@@ -28,34 +28,34 @@ use Seat\Services\AbstractSeatPlugin;
  *
  * @package Author\Seat\YourPackage
  */
-class YourPackageServiceProvider extends AbstractSeatPlugin
+class ExtraSDEServiceProvider extends AbstractSeatPlugin
 {
     public function boot()
     {
-        $this->add_routes();
+        // $this->add_routes();
 
         // Uncomment this block to add API documentation
         // $this->add_api_endpoints();
 
-        $this->add_publications();
+        // $this->add_publications();
 
-        $this->add_views();
+        // $this->add_views();
 
-        $this->add_translations();
+        // $this->add_translations();
 
-        $this->add_migrations();
+        // $this->add_migrations();
 
         // Uncomment this block to extend imported SDE tables
-        // $this->add_sde_tables();
+        $this->add_sde_tables();
     }
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/Config/yourpackage.config.php', 'yourpackage.config');
-        $this->mergeConfigFrom(__DIR__ . '/Config/yourpackage.locale.php', 'yourpackage.locale');
+        $this->mergeConfigFrom(__DIR__ . '/Config/extrasde.config.php', 'extrasde.config');
+        // $this->mergeConfigFrom(__DIR__ . '/Config/yourpackage.locale.php', 'yourpackage.locale');
 
         // Overload sidebar with your package menu entries
-        $this->mergeConfigFrom(__DIR__ . '/Config/Menu/package.sidebar.php', 'package.sidebar');
+        // $this->mergeConfigFrom(__DIR__ . '/Config/Menu/package.sidebar.php', 'package.sidebar');
 
         // Uncomment this block to overload character menu
         // $this->mergeConfigFrom(__DIR__ . '/Config/Menu/package.character.php', 'package.character.menu');
@@ -64,7 +64,7 @@ class YourPackageServiceProvider extends AbstractSeatPlugin
         // $this->mergeConfigFrom(__DIR__ . '/Config/Menu/package.corporation.php', 'package.corporation.menu');
 
         // Register generic permissions
-        $this->registerPermissions(__DIR__ . '/Config/Permissions/other.php', 'other');
+        // $this->registerPermissions(__DIR__ . '/Config/Permissions/other.php', 'other');
 
         // Uncomment this block to register character permissions
         // $this->registerPermissions(__DIR__ . '/Config/Permissions/character.php', 'character');
@@ -76,49 +76,49 @@ class YourPackageServiceProvider extends AbstractSeatPlugin
     /**
      * Include routes.
      */
-    private function add_routes()
-    {
-        $this->loadRoutesFrom(__DIR__ . '/Http/routes.php');
-    }
+    // private function add_routes()
+    // {
+    //     $this->loadRoutesFrom(__DIR__ . '/Http/routes.php');
+    // }
 
     /**
      * Import API annotations used to generate Swagger documentation (using Open Api Specifications syntax).
      */
-    private function add_api_endpoints()
-    {
-        $this->registerApiAnnotationsPath([
-            __DIR__ . '/Http/Resources',
-            __DIR__ . '/Http/Controllers/Api/V2',
-        ]);
-    }
+    // private function add_api_endpoints()
+    // {
+    //     $this->registerApiAnnotationsPath([
+    //         __DIR__ . '/Http/Resources',
+    //         __DIR__ . '/Http/Controllers/Api/V2',
+    //     ]);
+    // }
 
     /**
      * Add content which must be published (generally, configuration files or static ones).
      */
-    private function add_publications()
-    {
-        $this->publishes([
-            __DIR__ . '/resources/css' => public_path('web/css'),
-            __DIR__ . '/resources/img' => public_path('your-package/img'),
-            __DIR__ . '/resources/js' => public_path('your-package/js'),
-        ], ['public', 'seat']);
-    }
+    // private function add_publications()
+    // {
+    //     $this->publishes([
+    //         __DIR__ . '/resources/css' => public_path('web/css'),
+    //         __DIR__ . '/resources/img' => public_path('your-package/img'),
+    //         __DIR__ . '/resources/js' => public_path('your-package/js'),
+    //     ], ['public', 'seat']);
+    // }
 
     /**
      * Import translations.
      */
-    private function add_translations()
-    {
-        $this->loadTranslationsFrom(__DIR__ . '/resources/lang', 'yourpackage');
-    }
+    // private function add_translations()
+    // {
+    //     $this->loadTranslationsFrom(__DIR__ . '/resources/lang', 'yourpackage');
+    // }
 
     /**
      * Import views.
      */
-    private function add_views()
-    {
-        $this->loadViewsFrom(__DIR__ . '/resources/views', 'yourpackage');
-    }
+    // private function add_views()
+    // {
+    //     $this->loadViewsFrom(__DIR__ . '/resources/views', 'yourpackage');
+    // }
 
     /**
      * Add SDE tables to be imported.
@@ -133,10 +133,10 @@ class YourPackageServiceProvider extends AbstractSeatPlugin
     /**
      * Import database migrations.
      */
-    private function add_migrations()
-    {
-        $this->loadMigrationsFrom(__DIR__ . '/database/migrations/');
-    }
+    // private function add_migrations()
+    // {
+    //     $this->loadMigrationsFrom(__DIR__ . '/database/migrations/');
+    // }
 
     /**
      * Return the plugin public name as it should be displayed into settings.
@@ -147,7 +147,7 @@ class YourPackageServiceProvider extends AbstractSeatPlugin
      */
     public function getName(): string
     {
-        return 'Your Package Friendly Name';
+        return 'Extra SDE';
     }
 
     /**
@@ -159,7 +159,7 @@ class YourPackageServiceProvider extends AbstractSeatPlugin
      */
     public function getPackageRepositoryUrl(): string
     {
-        return 'https://example.com';
+        return 'https://github.com/Dusty-Meg/Seat-Extra-SDE';
     }
 
     /**
@@ -171,7 +171,7 @@ class YourPackageServiceProvider extends AbstractSeatPlugin
      */
     public function getPackagistPackageName(): string
     {
-        return 'your-package';
+        return 'seat-extra-sde';
     }
 
     /**
@@ -183,7 +183,7 @@ class YourPackageServiceProvider extends AbstractSeatPlugin
      */
     public function getPackagistVendorName(): string
     {
-        return 'author';
+        return 'dusty_meg';
     }
 
     /**
@@ -193,6 +193,6 @@ class YourPackageServiceProvider extends AbstractSeatPlugin
      */
     public function getVersion(): string
     {
-        return config('yourpackage.config.version');
+        return config('extra-sde.config.version');
     }
 }

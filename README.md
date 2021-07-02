@@ -1,5 +1,4 @@
 ![SeAT](http://i.imgur.com/aPPOxSK.png)
-# package-example
+# Seat Extra SDE Tables
 
-## This repository contains an example SeAT package
-Please use the main SeAT repository [here](https://github.com/eveseat/seat) for issues.
+A plugin to allow the inclusion of additional SDE tables into the Seat database.
