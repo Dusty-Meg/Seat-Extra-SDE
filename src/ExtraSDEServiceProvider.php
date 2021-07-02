@@ -193,14 +193,4 @@ class ExtraSDEServiceProvider extends AbstractSeatPlugin
     {
         return 'dusty_meg';
     }
-
-    /**
-     * Return the plugin installed version.
-     *
-     * @return string
-     */
-    public function getVersion(): string
-    {
-        return config('extrasde.config.version');
-    }
 }
